@@ -107,6 +107,7 @@ body {
   /* Sticky call button - mobile only */
 .call-button {
     display: none;
+    z-index: 999;
   }
   
   @media (max-width: 768px) {
@@ -205,3 +206,10 @@ body {
     cursor: pointer;
     font-size: 0.85rem;
   }
+
+  /* Footer spacing for mobile sticky button */
+@media (max-width: 768px) {
+  .site-footer {
+    padding-bottom: 80px;
+  }
+}
