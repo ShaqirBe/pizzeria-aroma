@@ -1,0 +1,14 @@
+{
+    "pizza": [
+      { "name": "Margherita", "price": "8,50 €" },
+      { "name": "Salami", "price": "9,50 €" },
+      { "name": "Funghi", "price": "9,00 €" }
+    ],
+    "pasta": [
+      { "name": "Spaghetti Bolognese", "price": "10,50 €" },
+      { "name": "Carbonara", "price": "11,00 €" }
+    ],
+    "salat": [
+      { "name": "Gemischter Salat", "price": "6,50 €" }
+    ]
+  }

@@ -1,0 +1,40 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="hero hero-bg">
+  <div class="open-badge <%= isOpen ? 'open' : 'closed' %>">
+    <% if (isOpen) { %>
+      Jetzt geöffnet
+    <% } else { %>
+      Zurzeit geschlossen
+      <% if (nextOpening) { %>
+        <small>
+          <%= nextOpening.dayOffset === 0
+            ? 'Öffnet um ' + nextOpening.time
+            : 'Öffnet morgen um ' + nextOpening.time %>
+        </small>
+      <% } %>
+    <% } %>
+  </div>
+    <div class="hero-overlay">
+      <h2>Pizzeria Aroma in Peckelsheim</h2>
+      <p>Pizza, Pasta & Salat – Familienbetrieb</p>
+  
+      <a class="btn" href="tel:056443059965">Jetzt anrufen</a>
+      <a class="btn secondary"
+         href="https://maps.google.com?q=Lützer+Straße+14a+34439+Peckelsheim"
+         target="_blank">
+        Route anzeigen
+      </a>
+    </div>
+  </section>
+
+<section>
+  <h3>Öffnungszeiten</h3>
+  <p>Dienstag – Donnerstag: 11:00–14:30 | 17:00–22:00</p>
+  <p>Freitag: 11:00–23:00</p>
+  <p>Sonntag: 11:00–22:00</p>
+  <p><strong>Montag: Ruhetag</strong></p>
+</section>
+
+<%- include('partials/footer') %>

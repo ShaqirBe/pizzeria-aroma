@@ -1,0 +1,27 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<h2>Speisekarte – Pizzeria Aroma Peckelsheim</h2>
+
+<h3>Pizza in Peckelsheim</h3>
+<ul>
+  <% menu.pizza.forEach(item => { %>
+    <li><strong><%= item.name %></strong> – <%= item.price %></li>
+  <% }) %>
+</ul>
+
+<h3>Pasta in Peckelsheim</h3>
+<ul>
+  <% menu.pasta.forEach(item => { %>
+    <li><strong><%= item.name %></strong> – <%= item.price %></li>
+  <% }) %>
+</ul>
+
+<h3>Salat in Peckelsheim</h3>
+<ul>
+  <% menu.salat.forEach(item => { %>
+    <li><strong><%= item.name %></strong> – <%= item.price %></li>
+  <% }) %>
+</ul>
+
+<%- include('partials/footer') %>
