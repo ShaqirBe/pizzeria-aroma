@@ -3,12 +3,43 @@
 
 <h2>Speisekarte – Pizzeria Aroma Peckelsheim</h2>
 
-<h3>Pizza in Peckelsheim</h3>
-<ul>
+<section class="menu-section">
+  <h2>🍕 Pizza in Peckelsheim</h2>
+
   <% menu.pizza.forEach(item => { %>
-    <li><strong><%= item.name %></strong> – <%= item.price %></li>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
   <% }) %>
-</ul>
+</section>
 
 <h3>Pasta in Peckelsheim</h3>
 <ul>
