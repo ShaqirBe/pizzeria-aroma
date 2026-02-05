@@ -216,7 +216,54 @@
             "gross_price": "11,00€",  
             "ingredients": "Broccoli, Hähnchen, Sauce Hollandaise",  
             "allergens": "3,Aa,5,O,K"  
+          }
+        ],
+
+          "pizzas": [
+            {  
+            "number": "45",  
+            "name": "Spezial Nature",  
+            "klein_price": "7,00€",  
+            "gross_price": "10,00€",  
+            "ingredients": "Tomatensoße & Käse",  
+            "allergens": "3,A,a,I"  
           },
+          {  
+            "number": "46",  
+            "name": "Spezial Tonno",  
+            "klein_price": "7,00€",  
+            "gross_price": "12,00€",  
+            "ingredients": "Tomatensoße & Käse, thunfisch",  
+            "allergens": "3,A,a,I,F"  
+          },
+          {  
+            "number": "47",  
+            "name": "Spezial Rustika",  
+            "klein_price": "7,00€",  
+            "gross_price": "11,00€",  
+            "ingredients": "Tomatensoße & Käse, Salami",  
+            "allergens": "3,6,9,Aa,I"  
+          },
+          {  
+            "number": "48",  
+            "name": "Spezial Mexikana",  
+            "klein_price": "7,00€",  
+            "gross_price": "12,00€",  
+            "ingredients": "Bolognesesoße & Käse, Salami, scharfe Peperoni, Mais",  
+            "allergens": "3,6,9,16,Aa,I"  
+          },
+          {  
+            "number": "49",  
+            "name": "Spezial Kebab",  
+            "klein_price": "8,00€",  
+            "gross_price": "12,00€",  
+            "ingredients": "Tomatensoße & Käse, Kebabfleisch",  
+            "allergens": "3,14,17,Aa,I,B,M,G"  
+          }
+
+          ],
+
+          "pizzaex": [
           {  
             "number": "60",  
             "name": "Pizza Spaghetti Hollandaise",  
@@ -312,7 +359,9 @@
             "gross_price": "11,00€",  
             "ingredients": "Käse, Sesam, frische Rucola, Balsamico, Parmesan, Mozzarella, Basilikum",  
             "allergens": "3,A,O,E,1"  
-          },
+          }
+        ],
+        "calzone": [ 
           {  
             "number": "80",  
             "name": "Calzone frittiert",  
@@ -387,13 +436,322 @@
           }  
         ],
       
-
-  "pasta": [
-      { "name": "Spaghetti Bolognese", "price": "10,50 €" },
-      { "name": "Carbonara", "price": "11,00 €" }
-    ],
     "salat": [
-      { "name": "Gemischter Salat", "price": "6,50 €" }
-    ]
-  }
-  
+      {  
+            "number": "95",  
+            "name": "Gemischter salat",  
+            "klein_price": "6,00€",  
+            "gross_price": "8,00€",  
+            "ingredients": "Grüner Salat, Tomaten, Gurken, Paprika, Zweiebelen, Oliven" 
+          },
+          {  
+            "number": "96",  
+            "name": "Thunfischsalat",  
+            "klein_price": "7,00€",  
+            "gross_price": "10,00€",  
+            "ingredients": "Grüner Salat, Tomaten, Gurken, Paprika, Zweiebelen, Thunfisch, Oliven, Mais",
+            "allergens": "F" 
+          },
+          {  
+            "number": "97",  
+            "name": "Bauernsalat",  
+            "klein_price": "7,50€",  
+            "gross_price": "9,00€",  
+            "ingredients": "Grüner Salat, Tomaten, Gurken, Paprika, Zweiebelen, Weißkäse, Peperoni, Oliven",
+            "allergens": "I" 
+          },
+
+          {  
+            "number": "98",  
+            "name": "Salat Aroma",  
+            "klein_price": "7,50€",  
+            "gross_price": "10,00€",  
+            "ingredients": "Grüner Salat, Tomaten, Gurken, Paprika, Ei, Zweiebelen, Weißkäse, Thunfisch, Schinken, Oliven",
+            "allergens": "3,6,9,15,F,I,K" 
+          },
+          {  
+            "number": "99",  
+            "name": "Mozzarellasalat",  
+            "klein_price": "7,00€",  
+            "gross_price": "10,00€",  
+            "ingredients": "Grüner Salat, Tomaten, Gurken, Zweiebelen, Mozzarella, Paparika",
+            "allergens": "I" 
+          },
+
+          {  
+            "number": "102",  
+            "name": "Salat Chicken",  
+            "klein_price": "7,00€",  
+            "gross_price": "10,00€",  
+            "ingredients": "Grüner Salat, Tomaten, Gurken, Paprika, Zweiebelen, Oliven, knuspriges Hähnchenfleisch" 
+          },
+          {  
+            "number": "103",  
+            "name": "Salat Hawaii",  
+            "klein_price": "7,00€",  
+            "gross_price": "10,00€",  
+            "ingredients": "Grüner Salat, Tomaten, Gurken, Paprika, Zweiebelen, Oliven, schinken, Ananas",
+            "allergens": "6,9,15" 
+          },
+          {  
+            "number": "104",  
+            "name": "Salat Artischocken",  
+            "klein_price": "7,00€",  
+            "gross_price": "10,00€",  
+            "ingredients": "Grüner Salat, Artischocken, Tomaten, Gurken, Paprika, Zweiebelen, Oliven, Mais, knuspriges Hähnchenfleisch" 
+          },
+          {  
+            "number": "105",  
+            "name": "Salat Kebab",  
+            "klein_price": "7,00€",  
+            "gross_price": "11,00€",  
+            "ingredients": "Grüner Salat, Tomaten, Gurken, Paprika, Zweiebelen, Kebabfleisch, Weißkäse, Dressing ", 
+            "allergens": "3,9,14,17,A,B,G,I,K,N,M"
+          }
+                
+    ],
+    "burger": [
+      {  
+            "number": "180",  
+            "name": "Hamburger Classic",    
+            "gross_price": "10,00€",  
+            "ingredients": "Brioche-Brötchen mit 180g Beef, salat, Tomaten, Gurken, Zwiebelen ", 
+            "allergens": "16,Aa,I,K"
+          },
+          {  
+            "number": "181",  
+            "name": "Cheeseburger Classic",    
+            "gross_price": "10,00€",  
+            "ingredients": "Brioche-Brötchen mit 180g Beef, salat, Tomaten, Gurken, Zwiebelen, Käse ", 
+            "allergens": "3,16,Aa,I,K"
+          },
+          {  
+            "number": "180",  
+            "name": "Chickenburger",    
+            "gross_price": "9,00€",  
+            "ingredients": "Brioche-Brötchen mit Hähnchenfleisch, Salat, Tomaten, Gurken, Zwiebelen ", 
+            "allergens": "3,16,Aa,I,K"
+          }
+    ],
+    "schnitzel": [
+      {  
+            "number": "190",  
+            "name": "Schnitzel ´Wiener-Art´",    
+            "gross_price": "10,00€",  
+            "ingredients": "Pommes Frietes, kleiner salat ", 
+            "allergens": "Aa,I,K"
+          },
+          {  
+            "number": "191",  
+            "name": "Schnitzel ´Jäger-Art´",    
+            "gross_price": "12,00€",  
+            "ingredients": "Pommes Frietes, kleiner salat", 
+            "allergens": "Aa,I,K"
+          },
+          {  
+            "number": "192",  
+            "name": "Schnitzel ´Zigeuner-Art´",    
+            "gross_price": "12,00€",  
+            "ingredients": "Pommes Frietes, kleiner salat", 
+            "allergens": "Aa,I,K"
+          },
+          {  
+            "number": "193",  
+            "name": "Schnitzel überbacken",    
+            "gross_price": "13,00€",  
+            "ingredients": "Käse überbacken, Sahnesoße, Pommes Frietes, Salat", 
+            "allergens": "3,Aa,I,K"
+          },
+          {  
+            "number": "194",  
+            "name": "Schnitzel Bolognese",    
+            "gross_price": "13,00€",  
+            "ingredients": "Tomaten Sahne Soße, Pilze, Pommes Frietes, Salat", 
+            "allergens": "3,Aa,I,K"
+          },
+          {  
+            "number": "195",  
+            "name": "Schnitzel Hawaii",    
+            "gross_price": "13,00€",  
+            "ingredients": "Schinken, Ananas, Käse, feine soße, Pommes Frietes, Salat", 
+            "allergens": "3,6,9,Aa,I,K"
+          },
+          {  
+            "number": "196",  
+            "name": "Schnitzel Hollandaise",    
+            "gross_price": "13,00€",  
+            "ingredients": "Sauce Hollandaise, Broccoli, Mais, Pommes Frietes, Salat", 
+            "allergens": "3,6,9,Aa,I,K"
+          }
+    ],
+    "beilagen":[
+      {
+        "number": "210",
+        "name": "Pommes Frietes klein",
+        "gross_price": "4.00€"
+      },
+      {
+        "number": "211",
+        "name": "Pommes Frietes groß",
+        "gross_price": "5.00€"
+      },
+      {
+        "number": "212",
+        "name": "Pizzabrötchen mit Kräuterbutter",
+        "gross_price": "5.00€",
+        "allergens": "Aa,I"
+      },
+      {
+        "number": "213",
+        "name": "Knoublauchbrot",
+        "gross_price": "5.00€",
+        "allergens": "Aa"
+      },
+      {
+        "number": "214",
+        "name": "Pizzabrot",
+        "gross_price": "5.00€",
+        "allergens": "Aa"
+      }
+    ],
+    "kebab": [
+      {  
+            "number": "249",  
+            "name": "Kebabauflauf",    
+            "gross_price": "13,00€",  
+            "ingredients": " Kebabfleisch, Zwiebeln, Sauce Hollandaise, Pommes Freites, Salat ", 
+            "allergens": "3,14,17,Aa,B,E,K,I,M"
+          },
+          {  
+            "number": "250",  
+            "name": "Kebab überbacken",    
+            "gross_price": "13,00€",  
+            "ingredients": " Kebabfleisch, Zwiebeln, Käse, Paprika, Tommatensoße, Käse überbacken, Pommes Freites, Salat ", 
+            "allergens": "3,14,17,Aa,B,E,K,I,M"
+          },
+          {  
+            "number": "251",  
+            "name": "Kebab überbacken",    
+            "gross_price": "13,00€",  
+            "ingredients": " Kebabfleisch, Frische Tommaten, Gorgonzola, Zucchini, Sahne, Käse überbacken, Pommes Freites, Salat ", 
+            "allergens": "3,14,17,Aa,B,E,K,I,M"
+          }
+        ],
+        "nudel": [
+          {  
+                "number": "260",  
+                "name": "Nudelgericht Napoli",    
+                "gross_price": "8,00€",  
+                "ingredients": " Tommatensose Napoli ", 
+                "allergens": "Aa,K,I"
+              },
+              {  
+                "number": "261",  
+                "name": "Nudelgericht Bolognese",    
+                "gross_price": "9,00€",  
+                "ingredients": " Bolognesesose ", 
+                "allergens": "16,Aa,K,I"
+              },
+              {  
+                "number": "262",  
+                "name": "Nudelgericht Tonno",    
+                "gross_price": "10,00€",  
+                "ingredients": " Tommatensose, Tunfisch, Zwiebeln ", 
+                "allergens": "Aa,C,K,I,L"
+              },
+              {  
+                "number": "263",  
+                "name": "Nudelgericht Panna",    
+                "gross_price": "10,00€",  
+                "ingredients": "Sahne Soße, Schinken", 
+                "allergens": "3,6,9,Aa,C,K,I,L"
+              },
+              {  
+                "number": "264",  
+                "name": "Nudelgericht Carbonara",    
+                "gross_price": "10,00€",  
+                "ingredients": "Sahne Soße, Schinken, Ei", 
+                "allergens": "3,6,9,15,Aa,K,I,L"
+              },
+              {  
+                "number": "265",  
+                "name": "Nudelgericht Vegetarisch",    
+                "gross_price": "10,00€",  
+                "ingredients": "Tommaten Soße, Broccoli, Paprika, Zwiebeln, Zuccini", 
+                "allergens": "3,Aa,K,I"
+              },
+              {  
+                "number": "266",  
+                "name": "Nudelgericht Shrimps",    
+                "gross_price": "10,00€",  
+                "ingredients": "Sahne Soße, Broccoli, Shrimps, Käse", 
+                "allergens": "3,Aa,K,I"
+              },
+              {  
+                "number": "267",  
+                "name": "Nudelgericht Lachs",    
+                "gross_price": "10,00€",  
+                "ingredients": "Sahne Soße, Lachs, frische tommaten", 
+                "allergens": "3,Aa,K,I"
+              },
+              {  
+                "number": "268",  
+                "name": "Nudelgericht Aioli",    
+                "gross_price": "10,00€",  
+                "ingredients": "Aioli, Knoblauch, Paprika, Peperoni, Parmesan ", 
+                "allergens": "3,Aa,K,I"
+              }
+            ],
+
+     "drinks": [ 
+      {
+              "number": "300",
+              "name": "Coca-Cola",
+              "klein_price": " 0,2l-2,00€",
+              "gross_price": "0,4l-3,50€"
+            }
+         ],
+
+
+         "bier": [
+          {
+            "number": "320",
+            "name": "Warburger Pilsener vom Fass",
+            "klein_price":" 0,3l-2,90€",
+            "gross_price":"0,5l-4,20€"
+          }
+         ],
+
+         "likor": [
+          {
+            "number": "330",
+            "name": "Grappa",
+            "gross_price":"0,2cl-3,00€"
+          }
+         ],
+
+         "weine": [
+          {
+            "number": "340",
+            "name": "Chianti trocken  (Rotwein) ",
+            "klein_price": " 0,25l-4,50€",
+            "gross_price":"0,5l-9,00€",
+            "allergens": "11"
+          }
+         ],
+
+         "warme": [
+          {
+            "number": "350",
+            "name": "Kaffee",
+            
+            "gross_price":"0,2l-2,50€",
+            "allergens": "4"
+          }
+         ]
+
+        
+
+
+  } 
+

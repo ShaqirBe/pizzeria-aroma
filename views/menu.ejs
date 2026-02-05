@@ -41,18 +41,578 @@
   <% }) %>
 </section>
 
-<h3>Pasta in Peckelsheim</h3>
-<ul>
-  <% menu.pasta.forEach(item => { %>
-    <li><strong><%= item.name %></strong> – <%= item.price %></li>
-  <% }) %>
-</ul>
+<section class="menu-section">
+  <h2>🍕 Pizza Spezial in Peckelsheim</h2>
 
-<h3>Salat in Peckelsheim</h3>
-<ul>
-  <% menu.salat.forEach(item => { %>
-    <li><strong><%= item.name %></strong> – <%= item.price %></li>
+  <% menu.pizzas.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
   <% }) %>
-</ul>
+
+  <h2>Anschliessend mit Salat, Zwiebelen, Ei & Dressing belegt</h2>
+
+</section>
+
+<section class="menu-section">
+  <h2>🍕 Pizza EXTRA in Peckelsheim</h2>
+
+  <% menu.pizzaex.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+</section>
+
+
+<section class="menu-section">
+  <h2>Calzone in Peckelsheim</h2>
+
+  <% menu.calzone.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+</section>
+
+<section class="menu-section">
+  <h2>Salat in Peckelsheim</h2>
+
+  <% menu.salat.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+  <h2>Alle Salate inklusive 3 Pizzabrötchen</h2>
+
+
+</section>
+
+<section class="menu-section">
+  <h2>AROMA GOES AMERIKA</h2>
+
+  <% menu.burger.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+
+  <h2>Alle Burger mit Pommes Frietes als Beilage </h2>
+
+</section>
+
+<section class="menu-section">
+  <h2>SCHNITZEL (Putenfleisch)</h2>
+
+  <% menu.schnitzel.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+
+
+</section>
+
+<section class="menu-section">
+  <h2>BEILAGEN</h2>
+
+  <% menu.beilagen.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+
+
+</section>
+
+<section class="menu-section">
+  <h2>KEBAB ÜBERBACKEN</h2>
+
+  <% menu.kebab.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+
+
+</section>
+
+<section class="menu-section">
+  <h2>NUDELGERICHTE</h2>
+<h3> Spaghetii, Macceroni, Tortellini nach Wahl!</h3>
+  <% menu.nudel.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+<h2>Alle Nudelrichte auf Wunsch überbacken + 2,00 Euro </h2>
+
+</section>
+
+<section class="menu-section">
+  <h2>ALKOHOLFREIE GETRÄNKE</h2>
+
+  <% menu.drinks.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+</section>
+
+<section class="menu-section">
+  <h2>BIER</h2>
+
+  <% menu.bier.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+</section>
+
+<section class="menu-section">
+  <h2>LIKÖRE & SPIRITUOSEN</h2>
+
+  <% menu.likor.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+</section>
+
+<section class="menu-section">
+  <h2>OFFENE WEINE</h2>
+
+  <% menu.weine.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+</section>
+
+
+<section class="menu-section">
+  <h2>WARME GETRÄNKE</h2>
+
+  <% menu.warme.forEach(item => { %>
+    <div class="menu-item">
+
+      <div class="menu-header">
+        <span class="menu-title">
+          <%= item.number %>. <%= item.name %>
+        </span>
+
+        <span class="menu-price">
+          <%= item.gross_price %>
+        </span>
+      </div>
+
+      <% if (item.ingredients) { %>
+        <div class="menu-ingredients">
+          <%= item.ingredients %>
+        </div>
+      <% } %>
+
+      <% if (item.klein_price) { %>
+        <div class="menu-small">
+          Klein: <%= item.klein_price %>
+        </div>
+      <% } %>
+
+      <% if (item.allergens) { %>
+        <div class="menu-allergens">
+          Allergene: <%= item.allergens %>
+        </div>
+      <% } %>
+
+    </div>
+  <% }) %>
+</section>
+
+<section class="allergens">
+  <h2>Allergene & Zusatzstoffe</h2>
+
+  <h3>Zusatzstoffe</h3>
+  <ul>
+    <% allergens.zusatzstoffe.forEach(item => { %>
+      <li><strong><%= item.code %></strong> – <%= item.name %></li>
+    <% }) %>
+  </ul>
+
+  <h3>Allergene</h3>
+  <ul>
+    <% allergens.allergene.forEach(item => { %>
+      <li><strong><%= item.code %></strong> – <%= item.name %></li>
+    <% }) %>
+  </ul>
+
+  <p class="allergen-hint">
+    Alle Preise inkl. MwSt. Änderungen und Irrtümer vorbehalten.
+  </p>
+</section>
+
 
 <%- include('partials/footer') %>

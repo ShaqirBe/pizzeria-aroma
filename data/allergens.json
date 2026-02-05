@@ -1,0 +1,38 @@
+{
+    "zusatzstoffe": [
+      { "code": "1", "name": "Suessungsmittel" },
+      { "code": "2", "name": "Chininhaltig" },
+      { "code": "3", "name": "Mit Farbstoffen" },
+      { "code": "4", "name": "Koffeinhaltig" },
+      { "code": "5", "name": "Mit Taurin" },
+      { "code": "6", "name": "Antioxidationsmittel" },
+      { "code": "7", "name": "Mit Phosphat Saeuerungsmittel" },
+      { "code": "8", "name": "Mit Milcheiweiss" },
+      { "code": "9", "name": "Mit Konservierungsstoffen" },
+      { "code": "10", "name": "Gewaschen" },
+      { "code": "11", "name": "Schwefeldioxid" },
+      { "code": "12", "name": "Geschwaerzt" },
+      { "code": "13", "name": "Enthaelt eine Phenylalaninquelle" },
+      { "code": "14", "name": "Mit Geschmacksverstaerkern" },
+      { "code": "15", "name": "Gekochter Truthahnschinken" },
+      { "code": "16", "name": "Hergestellt aus zerkleinertem Fleisch" },
+      { "code": "17", "name": "Stabilisatoren" }
+    ],
+    "allergene": [
+      { "code": "A", "name": "Glutenhaltige Getreide Weizen Roggen Gerste Hafer Dinkel Kamut" },
+      { "code": "B", "name": "Sellerie" },
+      { "code": "C", "name": "Krebstiere" },
+      { "code": "D", "name": "Lupine" },
+      { "code": "E", "name": "Sesam" },
+      { "code": "F", "name": "Fisch" },
+      { "code": "G", "name": "Senf" },
+      { "code": "H", "name": "Erdnuesse" },
+      { "code": "I", "name": "Milch inklusive Laktose" },
+      { "code": "J", "name": "Schalenfruechte Nuesse" },
+      { "code": "K", "name": "Ei" },
+      { "code": "L", "name": "Weichtiere" },
+      { "code": "M", "name": "Soja" },
+      { "code": "N", "name": "Sulfite" }
+    ]
+  }
+  

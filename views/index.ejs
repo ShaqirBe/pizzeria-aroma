@@ -2,6 +2,11 @@
 <%- include('partials/header') %>
 
 <section class="hero hero-bg">
+  <!-- Slideshow Background me fade -->
+  <div class="slideshow-background fade-slide" id="slide1"></div>
+  <div class="slideshow-background fade-slide" id="slide2"></div>
+
+
   <div class="open-badge <%= isOpen ? 'open' : 'closed' %>">
     <% if (isOpen) { %>
       Jetzt geöffnet
@@ -29,12 +34,52 @@
     </div>
   </section>
 
-<section>
-  <h3>Öffnungszeiten</h3>
-  <p>Dienstag – Donnerstag: 11:00–14:30 | 17:00–22:00</p>
-  <p>Freitag: 11:00–23:00</p>
-  <p>Sonntag: 11:00–22:00</p>
-  <p><strong>Montag: Ruhetag</strong></p>
-</section>
+  <section class="opening-hours">
+    <h3>Öffnungszeiten</h3>
+    <div class="hours-grid">
+      <div class="day-card">
+        <h4>Dienstag – Donnerstag</h4>
+        <p><i class="fa-regular fa-clock"></i> 11:00–14:30 <br> <i class="fa-regular fa-clock"></i> 17:00–22:00</p>
+      </div>
+      <div class="day-card">
+        <h4>Freitag</h4>
+        <p><i class="fa-regular fa-clock"></i> 11:00–23:00</p>
+      </div>
+      <div class="day-card">
+        <h4>Sonntag</h4>
+        <p><i class="fa-regular fa-clock"></i> 11:00–22:00</p>
+      </div>
+      <div class="day-card closed">
+        <h4>Montag</h4>
+        <p><i class="fa-regular fa-clock"></i> Ruhetag</p>
+      </div>
+    </div>
+  </section>
 
 <%- include('partials/footer') %>
+
+<script>
+  const images = <%- imagesJSON %>;
+
+  const slide1 = document.getElementById('slide1');
+  const slide2 = document.getElementById('slide2');
+
+  let currentIndex = 0;
+  let currentSlide = slide1;
+  let nextSlide = slide2;
+
+  // Ngarko foton e parë **menjëherë**
+  currentSlide.style.backgroundImage = `url(${images[currentIndex]})`;
+  currentSlide.classList.add('show');
+
+  // Nisi slideshow pas 5 sekondave
+  function changeSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    nextSlide.style.backgroundImage = `url(${images[currentIndex]})`;
+    nextSlide.classList.add('show');
+    currentSlide.classList.remove('show');
+    [currentSlide, nextSlide] = [nextSlide, currentSlide];
+  }
+
+  setInterval(changeSlide, 5000); // çdo 5 sekonda
+</script>
