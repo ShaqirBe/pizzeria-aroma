@@ -76,6 +76,8 @@ a {
   text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* shadow i butë */
 }
 
+
+
 /* =====================
    Responsive: Mobile
 ===================== */
@@ -128,7 +130,7 @@ a {
   padding: 0.45rem 1rem;
   margin-right: 0.6rem;
 
-  color: #fff;
+  color: rgb(214, 238, 150);
   text-decoration: none;
   font-weight: 500;
 
@@ -215,6 +217,22 @@ a {
 .hero-overlay h2:hover {
   transform: scale(1.1);         /* rritet 10% */
   color: #ef3723;                 /* ngjyra pak më e ndezur */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* shadow i butë */
+}
+
+.hero-overlay p {
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #27e93a;
+  padding: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.hero-overlay p:hover {
+  transform: scale(1.1);         /* rritet 10% */
+  color: #07901e;                 /* ngjyra pak më e ndezur */
   text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* shadow i butë */
 }
 

@@ -34,8 +34,6 @@ function isOpenNow() {
   const ranges = openingHours.hours[day] || [];
   const nowMinutes = now.hour * 60 + now.minute;
 
-  console.log("Berlin time:", now.toFormat("HH:mm"), "Day index:", day);
-  console.log("Ranges:", ranges);
 
   return ranges.some(([start, end]) => {
     return nowMinutes >= timeToMinutes(start) && nowMinutes <= timeToMinutes(end);
