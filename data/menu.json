@@ -1,7 +1,7 @@
 {
     "pizza": [
       
-      {  
+         {  
             "number": "02",  
             "name": "Pizza Salami",  
             "klein_price": "3,69€",  
@@ -219,7 +219,7 @@
           }
         ],
 
-          "pizzas": [
+ "pizzas": [
             {  
             "number": "45",  
             "name": "Spezial Nature",  
@@ -262,8 +262,7 @@
           }
 
           ],
-
-          "pizzaex": [
+  "pizzaex": [
           {  
             "number": "60",  
             "name": "Pizza Spaghetti Hollandaise",  
@@ -361,7 +360,7 @@
             "allergens": "3,A,O,E,1"  
           }
         ],
-        "calzone": [ 
+ "calzone": [ 
           {  
             "number": "80",  
             "name": "Calzone frittiert",  
@@ -436,8 +435,8 @@
           }  
         ],
       
-    "salat": [
-      {  
+ "salat": [
+          {  
             "number": "95",  
             "name": "Gemischter salat",  
             "klein_price": "6,00€",  
@@ -508,10 +507,9 @@
             "ingredients": "Grüner Salat, Tomaten, Gurken, Paprika, Zweiebelen, Kebabfleisch, Weißkäse, Dressing ", 
             "allergens": "3,9,14,17,A,B,G,I,K,N,M"
           }
-                
-    ],
-    "burger": [
-      {  
+         ],
+ "burger": [
+         {  
             "number": "180",  
             "name": "Hamburger Classic",    
             "gross_price": "10,00€",  
@@ -532,9 +530,9 @@
             "ingredients": "Brioche-Brötchen mit Hähnchenfleisch, Salat, Tomaten, Gurken, Zwiebelen ", 
             "allergens": "3,16,Aa,I,K"
           }
-    ],
-    "schnitzel": [
-      {  
+       ],
+"schnitzel": [
+         {  
             "number": "190",  
             "name": "Schnitzel ´Wiener-Art´",    
             "gross_price": "10,00€",  
@@ -583,8 +581,8 @@
             "ingredients": "Sauce Hollandaise, Broccoli, Mais, Pommes Frietes, Salat", 
             "allergens": "3,6,9,Aa,I,K"
           }
-    ],
-    "beilagen":[
+        ],
+ "beilagen":[
       {
         "number": "210",
         "name": "Pommes Frietes klein",
@@ -613,8 +611,8 @@
         "gross_price": "5.00€",
         "allergens": "Aa"
       }
-    ],
-    "kebab": [
+     ],
+"kebab": [
       {  
             "number": "249",  
             "name": "Kebabauflauf",    
@@ -635,9 +633,23 @@
             "gross_price": "13,00€",  
             "ingredients": " Kebabfleisch, Frische Tommaten, Gorgonzola, Zucchini, Sahne, Käse überbacken, Pommes Freites, Salat ", 
             "allergens": "3,14,17,Aa,B,E,K,I,M"
+          },
+          {  
+            "number": "252",  
+            "name": "Kebab überbacken",    
+            "gross_price": "13,00€",  
+            "ingredients": " Kebabfleisch, Zwiebeln, Broccoli, Pilze, Tommaten, SahnesoSe, Käse überbacken, Pommes Freites, Salat ", 
+            "allergens": "3,14,17,Aa,B,E,K,I,M"
+          },
+          {  
+            "number": "253",  
+            "name": "Kebab überbacken",    
+            "gross_price": "13,00€",  
+            "ingredients": " Kebabfleisch, Zwiebeln, WeiSkäse, Bologneze, frische Tommaten, SahnesoSe, Käse überbacken, Pommes Freites, Salat ", 
+            "allergens": "3,14,17,Aa,B,E,K,I,M"
           }
         ],
-        "nudel": [
+ "nudel": [
           {  
                 "number": "260",  
                 "name": "Nudelgericht Napoli",    
@@ -703,54 +715,191 @@
               }
             ],
 
-     "drinks": [ 
-      {
+ "drinks": [ 
+           {
               "number": "300",
               "name": "Coca-Cola",
               "klein_price": " 0,2l-2,00€",
-              "gross_price": "0,4l-3,50€"
+              "gross_price": "0,4l-3,50€",
+              "allergens": "1,3,4"
+            },
+            {
+              "number": "301",
+              "name": "Coca-Cola Zero",
+              "klein_price": " 0,2l-2,00€",
+              "gross_price": "0,4l-3,50€",
+              "allergens": "1,3,4"
+            },
+            {
+              "number": "302",
+              "name": "Fanta",
+              "klein_price": " 0,2l-2,00€",
+              "gross_price": "0,4l-3,50€",
+              "allergens": "1,3,4,6"
+            },
+            {
+              "number": "303",
+              "name": "Sprite",
+              "klein_price": " 0,2l-2,00€",
+              "gross_price": "0,4l-3,50€",
+              "allergens": "1,3"
+            },
+            {
+              "number": "304",
+              "name": "Mineralwasser",
+              "klein_price": " 0,2l-2,00€",
+              "gross_price": "0,4l-3,50€",
+              "allergens": ""
+            },
+            {
+              "number": "305",
+              "name": "Apfelschorle",
+              "klein_price": " 0,2l-2,00€",
+              "gross_price": "0,4l-3,50€",
+              "allergens": ""
+            },
+            {
+              "number": "306",
+              "name": "Mezzo-Mix",
+              "klein_price": " 0,2l-2,00€",
+              "gross_price": "0,4l-3,50€",
+              "allergens": "1,3,4"
+            },
+            {
+              "number": "307",
+              "name": "Apfelsaft",
+              "klein_price": " 0,2l-2,50€",
+              "gross_price": "0,4l-4.00€",
+              "allergens": "2"
+            },
+            {
+              "number": "308",
+              "name": "Orangensaft",
+              "klein_price": " 0,2l-2,50€",
+              "gross_price": "0,4l-4.00€",
+              "allergens": "2"
             }
          ],
 
 
-         "bier": [
+ "bier": [
           {
             "number": "320",
             "name": "Warburger Pilsener vom Fass",
             "klein_price":" 0,3l-2,90€",
             "gross_price":"0,5l-4,20€"
+          },
+          {
+            "number": "321",
+            "name": "Warburger Urtyp",
+            "klein_price":" 0,3l-2,90€",
+            "gross_price":"0,5l-4,20€"
+          },
+          {
+            "number": "322",
+            "name": "Warburger Hefeweizen",
+            "klein_price":"",
+            "gross_price":"0,5l-4,20€"
+          },
+          {
+            "number": "323",
+            "name": "Warburger Dunkel",
+            "klein_price":"",
+            "gross_price":"0,5l-4,20€"
+          },
+          {
+            "number": "324",
+            "name": "Warburger Alkoholfrei",
+            "klein_price":" 0,3l-2,90€",
+            "gross_price":""
+          },
+          {
+            "number": "325",
+            "name": "Warburger Radler",
+            "klein_price":" 0,3l-2,90€",
+            "gross_price":""
           }
          ],
 
-         "likor": [
+"likor": [
           {
             "number": "330",
             "name": "Grappa",
             "gross_price":"0,2cl-3,00€"
+          },
+          {
+            "number": "331",
+            "name": "Ramazotti",
+            "gross_price":"0,2cl-3,00€"
+          },
+          {
+            "number": "332",
+            "name": "Sambuca",
+            "gross_price":"0,2cl-3,00€"
           }
          ],
-
-         "weine": [
+ "weine": [
           {
             "number": "340",
             "name": "Chianti trocken  (Rotwein) ",
             "klein_price": " 0,25l-4,50€",
             "gross_price":"0,5l-9,00€",
             "allergens": "11"
+          },
+          {
+            "number": "341",
+            "name": "Lambrusco lieblich (Rotwein) ",
+            "klein_price": " 0,25l-4,50€",
+            "gross_price":"0,5l-9,00€",
+            "allergens": "11"
+          },
+          {
+            "number": "342",
+            "name": "Frascati trocken (Weisswein) ",
+            "klein_price": " 0,25l-4,50€",
+            "gross_price":"0,5l-9,00€",
+            "allergens": "11"
           }
          ],
 
-         "warme": [
+  "warme": [
           {
             "number": "350",
-            "name": "Kaffee",
-            
+            "name": "Kaffee",  
             "gross_price":"0,2l-2,50€",
             "allergens": "4"
+          },
+          {
+            "number": "351",
+            "name": "Espresso",
+            "gross_price":"0,2l-2,00€",
+            "allergens": "4"
+          },
+          {
+            "number": "352",
+            "name": "Cappuccino",
+            "gross_price":"0,2l-3,00€",
+            "allergens": "4"
+          },
+          {
+            "number": "353",
+            "name": "Latte Machiatto",
+            "gross_price":"0,2l-3,00€",
+            "allergens": "4"
+          },
+          {
+            "number": "354",
+            "name": "Tee",
+            "gross_price":"0,2l-2,00€",
+            "allergens": "4"
+          },
+          {
+            "number": "355",
+            "name": "Kakao",
+            "gross_price":"0,2l-3,00€",
+            "allergens": "1"
           }
          ]
-
-        
 
 
   } 

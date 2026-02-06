@@ -3,7 +3,25 @@
 
 <h2>Speisekarte – Pizzeria Aroma Peckelsheim</h2>
 
-<section class="menu-section">
+<div class="menu-tabs">
+  <button class="tab-btn active" data-target="pizza">🍕 Pizza</button>
+  <button class="tab-btn" data-target="pizzas">⭐🍕 Pizza Spezial</button>
+  <button class="tab-btn" data-target="pizzaex">➕🍕 Pizza Extra</button>
+  <button class="tab-btn" data-target="calzone">🥙 Calzone</button>
+  <button class="tab-btn" data-target="salat">🥗 Salat</button>
+  <button class="tab-btn" data-target="schnitzel">🍖 Schnitzel</button>
+  <button class="tab-btn" data-target="beilagen">🍟 Beilagen</button>
+  <button class="tab-btn" data-target="burger">🍔 Burger</button>
+  <button class="tab-btn" data-target="kebab">🌯 Kebab</button>
+  <button class="tab-btn" data-target="nudel">🍝 Nudel</button>
+  <button class="tab-btn" data-target="drinks">🥤 Getränke</button>
+  <button class="tab-btn" data-target="bier">🍺 Bier</button>
+  <button class="tab-btn" data-target="likor">🥃 Likör</button>
+  <button class="tab-btn" data-target="weine">🍷 Weine</button>
+  <button class="tab-btn" data-target="warme">☕ Warme Getränke</button>
+</div>
+
+<section class="menu-section tab-content active" id="pizza">
   <h2>🍕 Pizza in Peckelsheim</h2>
 
   <% menu.pizza.forEach(item => { %>
@@ -41,7 +59,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="pizzas">
   <h2>🍕 Pizza Spezial in Peckelsheim</h2>
 
   <% menu.pizzas.forEach(item => { %>
@@ -82,7 +100,7 @@
 
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="pizzaex">
   <h2>🍕 Pizza EXTRA in Peckelsheim</h2>
 
   <% menu.pizzaex.forEach(item => { %>
@@ -121,7 +139,7 @@
 </section>
 
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="calzone">
   <h2>Calzone in Peckelsheim</h2>
 
   <% menu.calzone.forEach(item => { %>
@@ -159,7 +177,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="salat">
   <h2>Salat in Peckelsheim</h2>
 
   <% menu.salat.forEach(item => { %>
@@ -200,7 +218,7 @@
 
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="burger">
   <h2>AROMA GOES AMERIKA</h2>
 
   <% menu.burger.forEach(item => { %>
@@ -241,7 +259,7 @@
 
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="schnitzel">
   <h2>SCHNITZEL (Putenfleisch)</h2>
 
   <% menu.schnitzel.forEach(item => { %>
@@ -281,7 +299,7 @@
 
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="beilagen">
   <h2>BEILAGEN</h2>
 
   <% menu.beilagen.forEach(item => { %>
@@ -321,7 +339,7 @@
 
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="kebab">
   <h2>KEBAB ÜBERBACKEN</h2>
 
   <% menu.kebab.forEach(item => { %>
@@ -361,7 +379,7 @@
 
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="nudel">
   <h2>NUDELGERICHTE</h2>
 <h3> Spaghetii, Macceroni, Tortellini nach Wahl!</h3>
   <% menu.nudel.forEach(item => { %>
@@ -401,7 +419,7 @@
 
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="drinks">
   <h2>ALKOHOLFREIE GETRÄNKE</h2>
 
   <% menu.drinks.forEach(item => { %>
@@ -439,7 +457,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="bier">
   <h2>BIER</h2>
 
   <% menu.bier.forEach(item => { %>
@@ -477,7 +495,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="likor">
   <h2>LIKÖRE & SPIRITUOSEN</h2>
 
   <% menu.likor.forEach(item => { %>
@@ -515,7 +533,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="weine">
   <h2>OFFENE WEINE</h2>
 
   <% menu.weine.forEach(item => { %>
@@ -554,7 +572,7 @@
 </section>
 
 
-<section class="menu-section">
+<section class="menu-section tab-content" id="warme">
   <h2>WARME GETRÄNKE</h2>
 
   <% menu.warme.forEach(item => { %>
@@ -616,3 +634,18 @@
 
 
 <%- include('partials/footer') %>
+
+<script>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.target).classList.add("active");
+    });
+  });
+</script>
