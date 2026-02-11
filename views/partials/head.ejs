@@ -14,7 +14,13 @@
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
-      "name": "Pizzeria Aroma",
+      "@id": "https://www.pizzeria-aroma-peckelsheim.de/#restaurant",
+      "name": "Pizzeria Aroma Peckelsheim",
+      "url": "https://www.pizzeria-aroma-peckelsheim.de",
+      "image": "https://www.pizzeria-aroma-peckelsheim.de/images2/fasade.jpg",
+      "telephone": "+49-5644-3059965",
+      "priceRange": "€€",
+      "servesCuisine": ["Pizza", "Pasta", "Salat", "Burger"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Lützer Straße 14a",
@@ -22,14 +28,40 @@
         "postalCode": "34439",
         "addressCountry": "DE"
       },
-      "telephone": "+49-5644-3059965",
-      "servesCuisine": ["Pizza", "Pasta", "Salat"],
-      "priceRange": "€€",
-      "openingHours": [
-        "Tu-Th 11:00-14:30",
-        "Tu-Th 17:00-22:00",
-        "Fr 11:00-23:00",
-        "Su 11:00-22:00"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.6419",
+        "longitude": "9.0186"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday","Wednesday","Thursday"],
+          "opens": "11:00",
+          "closes": "14:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday","Wednesday","Thursday"],
+          "opens": "17:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday","Saturday"],
+          "opens": "11:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "11:00",
+          "closes": "22:00"
+        }
+      ],
+      "hasMenu": "https://www.pizzeria-aroma-peckelsheim.de/menu",
+      "sameAs": [
+        "https://www.google.com/maps"
       ]
     }
     </script>
