@@ -49,6 +49,28 @@
   </div>
 
 </section>
+
+<section class="page-shell opening-hours" aria-labelledby="opening-hours-title">
+  <div class="opening-hours-head">
+    <p class="eyebrow">Öffnungszeiten</p>
+    <h2 id="opening-hours-title">Unsere Zeiten auf einen Blick</h2>
+  </div>
+
+  <div class="hours-grid">
+    <% hoursCards.forEach((entry) => { %>
+      <article class="day-card <%= entry.isClosed ? 'closed' : '' %>">
+        <h3><%= entry.day %></h3>
+        <% if (entry.isClosed) { %>
+          <p>Ruhetag</p>
+        <% } else { %>
+          <% entry.times.forEach((slot) => { %>
+            <p><%= slot %></p>
+          <% }) %>
+        <% } %>
+      </article>
+    <% }) %>
+  </div>
+</section>
 </main>
 
 <%- include('partials/footer') %>

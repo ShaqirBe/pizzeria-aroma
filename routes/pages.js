@@ -3,11 +3,21 @@ const router = express.Router();
 const path = require("path");
 const fs = require("fs");
 const { isOpenNow, getNextOpening } = require("../utils/isOpenNow");
+const openingHours = require("../config/openingHours");
 
 // IMPORT I SAKTË
 const menuData = require("../data/menu.json");
 const allergensData = require("../data/allergens.json");
 const SITE_URL = "https://www.pizzeria-aroma-peckelsheim.de";
+const WEEK_DAYS = [
+  { key: 1, label: "Montag" },
+  { key: 2, label: "Dienstag" },
+  { key: 3, label: "Mittwoch" },
+  { key: 4, label: "Donnerstag" },
+  { key: 5, label: "Freitag" },
+  { key: 6, label: "Samstag" },
+  { key: 0, label: "Sonntag" }
+];
 
 router.use((req, res, next) => {
   res.locals.currentPath = req.path;
@@ -32,6 +42,14 @@ router.get("/", (req, res) => {
   // Llogarit statusin hapur/mbyllur
   const open = isOpenNow();
   const nextOpening = open ? null : getNextOpening();
+  const hoursCards = WEEK_DAYS.map((day) => {
+    const ranges = openingHours.hours[day.key] || [];
+    return {
+      day: day.label,
+      isClosed: ranges.length === 0,
+      times: ranges.map(([start, end]) => `${start} - ${end}`)
+    };
+  });
 
   // Render index.ejs me të gjitha të dhënat
   res.render("index", {
@@ -41,7 +59,8 @@ router.get("/", (req, res) => {
     pageTitle: "Pizzeria Aroma Peckelsheim - Pizza, Pasta & Salat",
     pageDescription:
       "Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb.",
-    heroPreloadImage: imageFiles[0] || null
+    heroPreloadImage: imageFiles[0] || null,
+    hoursCards
   });
 });
 
