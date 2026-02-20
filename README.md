@@ -38,6 +38,8 @@ The website is fully responsive, legally compliant for Germany (Impressum, Cooki
 ---
 
 ## 📁 Project Structure
+
+
 pizzeria-aroma/
 ├── config/
 │   └── openingHours.js        # Business opening hours
@@ -67,6 +69,7 @@ pizzeria-aroma/
 ├── .gitignore
 └── README.md
 ---
+
 
 ## 🚀 Getting Started (Local)
 
