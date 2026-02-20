@@ -41,33 +41,33 @@ The website is fully responsive, legally compliant for Germany (Impressum, Cooki
 
 
 pizzeria-aroma/
-├── config/
-│   └── openingHours.js        # Business opening hours
-├── data/
-│   └── menu.json              # Restaurant menu data
-├── public/
-│   ├── css/
-│   │   └── style.css          # Global styles
-│   ├── images/
-│   │   └── logo.jpg           # Logo / assets
-│   └── js/
-│       └── cookie.js          # Cookie notice logic
-├── routes/
-│   └── pages.js               # Page routes
-├── utils/
-│   └── isOpenNow.js           # Open/Closed logic
-├── views/
-│   ├── partials/
-│   │   ├── header.ejs
-│   │   └── footer.ejs
-│   ├── index.ejs
-│   ├── menu.ejs
-│   ├── kontakt.ejs
-│   └── impressum.ejs
-├── server.js
-├── package.json
-├── .gitignore
-└── README.md
+ ├── config/
+ │   └── openingHours.js        # Business opening hours
+ ├── data/
+ │   └── menu.json              # Restaurant menu data
+ ├── public/
+ │   ├── css/
+ │   │   └── style.css          # Global styles
+ │   ├── images/
+ │   │   └── logo.jpg           # Logo / assets
+ │   └── js/
+ │       └── cookie.js          # Cookie notice logic
+ ├── routes/
+ │   └── pages.js               # Page routes
+ ├── utils/
+ │   └── isOpenNow.js           # Open/Closed logic
+ ├── views/
+ │   ├── partials/
+ │   │   ├── header.ejs
+ │   │   └── footer.ejs
+ │   ├── index.ejs
+ │   ├── menu.ejs
+ │   ├── kontakt.ejs
+ │   └── impressum.ejs
+ ── server.js
+ ── package.json
+ ── .gitignore
+ ── README.md
 ---
 
 
