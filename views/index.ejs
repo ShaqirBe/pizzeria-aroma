@@ -6,7 +6,7 @@
 
   <!-- Background slideshow -->
   <div class="hero-bg">
-    <div class="slide active" id="slide1"></div>
+    <div class="slide active" id="slide1" style="<%= heroPreloadImage ? `background-image:url('${heroPreloadImage}')` : '' %>"></div>
     <div class="slide" id="slide2"></div>
   </div>
 
@@ -64,7 +64,7 @@
   let activeSlide = slide1;
   let inactiveSlide = slide2;
 
-  if (images.length > 0) {
+  if (images.length > 0 && !activeSlide.style.backgroundImage) {
     activeSlide.style.backgroundImage = `url(${images[slideIndex]})`;
     activeSlide.classList.add('active');
   }

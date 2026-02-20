@@ -17,6 +17,9 @@
     content="<%= metaDescription %>"
   />
   <link rel="canonical" href="<%= metaCanonical %>" />
+  <% if (heroPreloadImage) { %>
+    <link rel="preload" as="image" href="<%= heroPreloadImage %>" />
+  <% } %>
 
   <meta property="og:locale" content="de_DE" />
   <meta property="og:type" content="website" />

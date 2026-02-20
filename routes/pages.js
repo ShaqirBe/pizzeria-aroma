@@ -16,16 +16,18 @@ router.use((req, res, next) => {
     "Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb.";
   res.locals.canonicalUrl = `${SITE_URL}${req.path}`;
   res.locals.pageImage = `${SITE_URL}/images2/fasade.jpeg`;
+  res.locals.heroPreloadImage = null;
   next();
 });
 
 
 router.get("/", (req, res) => {
-  // Lexo të gjitha fotot nga /public/images
+  // Lexo fotot e slider-it nga /public/images
   const imagesDir = path.join(__dirname, "../public/images");
-  const imageFiles = fs.readdirSync(imagesDir)
-    .filter(file => /\.(jpe?g|png|webp|gif)$/i.test(file))
-    .map(file => "/images/" + file);
+  const preferredHeroImages = ["slider1.jpg", "slider2.jpg", "slide3.jpg", "bg1.jpg"];
+  const imageFiles = preferredHeroImages
+    .filter((file) => fs.existsSync(path.join(imagesDir, file)))
+    .map((file) => `/images/${file}`);
 
   // Llogarit statusin hapur/mbyllur
   const open = isOpenNow();
@@ -38,7 +40,8 @@ router.get("/", (req, res) => {
     nextOpening,
     pageTitle: "Pizzeria Aroma Peckelsheim - Pizza, Pasta & Salat",
     pageDescription:
-      "Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb."
+      "Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb.",
+    heroPreloadImage: imageFiles[0] || null
   });
 });
 
