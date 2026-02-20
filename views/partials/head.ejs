@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <% const metaTitle = pageTitle || "Pizzeria Aroma Peckelsheim - Pizza, Pasta & Salat"; %>
+  <% const metaDescription = pageDescription || "Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb."; %>
+  <% const metaCanonical = canonicalUrl || "https://www.pizzeria-aroma-peckelsheim.de/"; %>
+  <% const metaImage = pageImage || "https://www.pizzeria-aroma-peckelsheim.de/images2/fasade.jpeg"; %>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#101010" />
+  <meta name="robots" content="index, follow" />
 
-  <title>Pizzeria Aroma Peckelsheim - Pizza, Pasta & Salat</title>
+  <title><%= metaTitle %></title>
 
   <meta
     name="description"
-    content="Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb."
+    content="<%= metaDescription %>"
   />
+  <link rel="canonical" href="<%= metaCanonical %>" />
+
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pizzeria Aroma Peckelsheim" />
+  <meta property="og:title" content="<%= metaTitle %>" />
+  <meta property="og:description" content="<%= metaDescription %>" />
+  <meta property="og:url" content="<%= metaCanonical %>" />
+  <meta property="og:image" content="<%= metaImage %>" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<%= metaTitle %>" />
+  <meta name="twitter:description" content="<%= metaDescription %>" />
+  <meta name="twitter:image" content="<%= metaImage %>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

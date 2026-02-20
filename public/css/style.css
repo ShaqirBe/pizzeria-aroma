@@ -492,6 +492,11 @@ p {
   margin-top: 0.9rem;
 }
 
+.page address {
+  margin-top: 0.6rem;
+  font-style: normal;
+}
+
 .page a {
   color: var(--brand-dark);
   font-weight: 700;
