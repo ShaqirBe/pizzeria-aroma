@@ -16,21 +16,126 @@ a {
 /* =========================
    HEADER + SLIDER
 ========================= */
+/* HEADER */
 .site-header {
   position: relative;
-  height: 260px;
+  height: 280px;
   overflow: hidden;
-  background: #222;
-  z-index: 10;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius: 20px;
 }
 
+/* Background static */
+.header-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+  z-index: 0;
+}
 
+/* Overlay cinematic */
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+}
 
-.slide {
+/* Content + animation */
+.header-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 0 1.5rem;
+  overflow: hidden;
+}
+
+.animate-title,
+.animate-nav a {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.header-content h1 {
+  font-style: italic;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #d65143;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* Nav */
+.header-content nav {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.header-content nav a {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  color: rgb(214, 238, 150);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.25s ease all;
+}
+
+.header-content nav a:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Divider italian */
+.header-divider-italian {
+  display: flex;
+  height: 12px;
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-divider-italian div { flex:1; height:100%; }
+.header-divider-italian .green { background:#008C45; }
+.header-divider-italian .white { background:#fff; }
+.header-divider-italian .red { background:#CD212A; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .site-header { height: 220px; }
+  .header-divider-italian { height: 8px; }
+  .header-content h1 { font-size: clamp(1.8rem,5vw,3rem); }
+}
+/* =========================
+   HERO – REFACTORED
+========================= */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg .slide {
   position: absolute;
   inset: 0;
   background-size: cover;
@@ -39,228 +144,77 @@ a {
   transition: opacity 1.2s ease-in-out;
 }
 
-.slide.active {
+.hero-bg .slide.active {
   opacity: 1;
 }
 
-.header-overlay {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: linear-gradient(
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.55)
-  );
-}
-
-.header-content {
-  
-  padding-left: 1.5rem;
-  color: #fff;
-}
-
-.header-content h1 {
-  font-style: italic;
-  margin: 0 0 0.5rem 0;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-  color: #d65143; /* ngjyra fillestare */
-}
-
-.header-content h1:hover {
-  transform: scale(1.1);         /* rritet 10% */
-  color: #ef3723;                 /* ngjyra pak më e ndezur */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* shadow i butë */
-}
-
-
-
-/* =====================
-   Responsive: Mobile
-===================== */
-@media (max-width: 600px) {
-  .header-content h1:hover {
-    transform: scale(1.05); /* rritje më e lehtë në ekran të vogël */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.15); /* shadow më i butë */
-  }
-}
-
-/* =========================
-   HEADER DEVIDER ITALIAN
-========================= */
-
-.header-divider-italian {
-  height: 12px;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-  border-radius: 6px 6px 0 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.header-divider-italian div {
-  flex: 1;
-  height: 100%;
-}
-
-/* Ngjyrat e flamurit italian */
-.header-divider-italian .green { background: #008C45; }
-.header-divider-italian .white { background: #FFFFFF; }
-.header-divider-italian .red   { background: #CD212A; }
-
-/* Për mobile, mund të zvogëlojmë lartësinë */
-@media (max-width: 768px) {
-  .header-divider-italian {
-    height: 8px;
-  }
-}
-
-/* =========================
-   HEADER NAVIGATION
-========================= */
-.site-header nav {
-  margin-top: 0.5rem;
-}
-
-.site-header nav a {
-  display: inline-block;
-  padding: 0.45rem 1rem;
-  margin-right: 0.6rem;
-
-  color: rgb(214, 238, 150);
-  text-decoration: none;
-  font-weight: 500;
-
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(4px);
-
-  transition:
-    background 0.25s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.site-header nav a:hover {
-  background: rgba(255, 255, 255, 0.28);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-.site-header nav a:active {
-  transform: translateY(0);
-}
-
-/* =========================
-   HERO / PAGE CONTENT
-========================= */
-.hero {
-  padding: 2rem;
-  text-align: center;
-}
-
-.hero.hero-bg {
-  position: relative;
-  overflow: hidden;
-  height: 500px; /* ose sipas nevojës */
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-}
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .hero.hero-bg {
-    height: 400px;
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-  }
-}
-
-.slideshow-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.slideshow-background.show {
-  opacity: 1;
-}
-
+/* Dark overlay for readability */
 .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Content */
+.hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   color: #fff;
-  padding: 2rem;
-}
-.hero-overlay h2 {
-  font-style: italic;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #d65143;
-  padding: 2rem;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  max-width: 900px;
+  padding: 0 20px;
 }
 
-.hero-overlay h2:hover {
-  transform: scale(1.1);         /* rritet 10% */
-  color: #ef3723;                 /* ngjyra pak më e ndezur */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* shadow i butë */
+/* Typography */
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
-.hero-overlay p {
-  font-style: italic;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #27e93a;
-  padding: 2rem;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+.hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
 }
 
-.hero-overlay p:hover {
-  transform: scale(1.1);         /* rritet 10% */
-  color: #07901e;                 /* ngjyra pak më e ndezur */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* shadow i butë */
+/* Actions */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
+/* Buttons */
+.btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: #03831a;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: #ee3434;
+  color: #fff;
+}
+
+/* Open badge – diskret */
 .open-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 20px;
+  right: 20px;
   z-index: 3;
-  background: rgba(0,0,0,0.6);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-}
-
-
-.page {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
-  line-height: 1.6;
-}
-
-.open-badge {
-  display: inline-block;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  margin-bottom: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .open-badge.open {
@@ -269,30 +223,21 @@ a {
 }
 
 .open-badge.closed {
-  background: #9e9e9e;
+  background: #616161;
   color: #fff;
 }
 
 .open-badge small {
   display: block;
-  margin-top: 4px;
-  font-size: 0.75rem;
-  font-weight: normal;
-  opacity: 0.9;
+  font-size: 0.65rem;
+  opacity: 0.85;
 }
 
-.btn {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.8rem 1.2rem;
-  background: #03831a;
-  color: white;
-  text-decoration: none;
-  border-radius: 999px;
-}
-
-.btn.secondary {
-  background: rgb(238, 52, 52);
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-content p {
+    font-size: 1.1rem;
+  }
 }
 /* =========================
    OPENING HOURS

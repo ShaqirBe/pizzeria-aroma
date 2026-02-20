@@ -8,6 +8,11 @@ const { isOpenNow, getNextOpening } = require("../utils/isOpenNow");
 const menuData = require("../data/menu.json");
 const allergensData = require("../data/allergens.json");
 
+router.use((req, res, next) => {
+  res.locals.currentPath = req.path;
+  next();
+});
+
 
 router.get("/", (req, res) => {
   // Lexo të gjitha fotot nga /public/images

@@ -1,33 +1,14 @@
-<header class="site-header header-bg">
-  <div class="slide active" style="background-image:url('/images/slider1.jpg')"></div>
-  <div class="slide" style="background-image:url('/images/slider2.jpg')"></div>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="brand" aria-label="Zur Startseite">
+      <span class="brand-kicker">Familienbetrieb</span>
+      <span class="brand-name">Pizzeria Aroma</span>
+    </a>
 
-  <div class="header-overlay">
-    <div class="header-content">
-      <h1>Pizzeria Aroma</h1>
-
-      <nav>
-        <a href="/">Startseite</a>
-        <a href="/menu">Speisekarte</a>
-      </nav>
-    </div>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a class="<%= currentPath === '/' ? 'active' : '' %>" href="/">Startseite</a>
+      <a class="<%= currentPath === '/menu' ? 'active' : '' %>" href="/menu">Speisekarte</a>
+      <a class="<%= currentPath === '/kontakt' ? 'active' : '' %>" href="/kontakt">Kontakt</a>
+    </nav>
   </div>
 </header>
-
-<div class="header-divider-italian">
-  <div class="green"></div>
-  <div class="white"></div>
-  <div class="red"></div>
-</div>
-
-
-<script>
-  const slides = document.querySelectorAll(".slide");
-  let current = 0;
-
-  setInterval(() => {
-    slides[current].classList.remove("active");
-    current = (current + 1) % slides.length;
-    slides[current].classList.add("active");
-  }, 5000);
-</script>

@@ -1,17 +1,24 @@
 <%- include('partials/head') %>
 <%- include('partials/header') %>
 
-<section class="hero hero-bg">
-  <!-- Slideshow Background me fade -->
-  <div class="slideshow-background fade-slide" id="slide1"></div>
-  <div class="slideshow-background fade-slide" id="slide2"></div>
+<main class="home-main">
+<section class="hero">
 
+  <!-- Background slideshow -->
+  <div class="hero-bg">
+    <div class="slide active" id="slide1"></div>
+    <div class="slide" id="slide2"></div>
+  </div>
 
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Status badge (sekondar, jo fokus) -->
   <div class="open-badge <%= isOpen ? 'open' : 'closed' %>">
     <% if (isOpen) { %>
       Jetzt geöffnet
     <% } else { %>
-      Zurzeit geschlossen
+      Geschlossen
       <% if (nextOpening) { %>
         <small>
           <%= nextOpening.dayOffset === 0
@@ -21,44 +28,27 @@
       <% } %>
     <% } %>
   </div>
-    <div class="hero-overlay">
-      <h2>Pizzeria Aroma in Peckelsheim</h2>
-      <p>Pizza, Pasta & Salat - Familienbetrieb</p>
-  
-      <a class="btn" href="tel:+4956443059965">Jetzt anrufen</a>
-      <a class="btn secondary"
-         href="https://maps.google.com?q=Lützer+Straße+14a+34439+Peckelsheim"
-         target="_blank">
+
+  <!-- Content -->
+  <div class="hero-content">
+    <p class="eyebrow">Peckelsheim</p>
+    <h1>Pizzeria Aroma</h1>
+    <p>Pizza, Pasta & Salat – Familienbetrieb</p>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="tel:+4956443059965">Jetzt anrufen</a>
+      <a
+        class="btn secondary"
+        href="https://maps.google.com?q=Lützer+Straße+14a+34439+Peckelsheim"
+        target="_blank"
+      >
         Route anzeigen
       </a>
     </div>
-  </section>
+  </div>
 
-  <section class="opening-hours">
-    <h3>Öffnungszeiten</h3>
-    <div class="hours-grid">
-      <div class="day-card">
-        <h4>Dienstag – Donnerstag</h4>
-        <p><i class="fa-regular fa-clock"></i> 11:00–14:30 <br> <i class="fa-regular fa-clock"></i> 17:00–22:00</p>
-      </div>
-      <div class="day-card">
-        <h4>Freitag</h4>
-        <p><i class="fa-regular fa-clock"></i> 11:00–23:00</p>
-      </div>
-      <div class="day-card">
-        <h4>Samstag</h4>
-        <p><i class="fa-regular fa-clock"></i> 11:00–23:00</p>
-      </div>
-      <div class="day-card">
-        <h4>Sonntag</h4>
-        <p><i class="fa-regular fa-clock"></i> 11:00–22:00</p>
-      </div>
-      <div class="day-card closed">
-        <h4>Montag</h4>
-        <p><i class="fa-regular fa-clock"></i> Ruhetag</p>
-      </div>
-    </div>
-  </section>
+</section>
+</main>
 
 <%- include('partials/footer') %>
 
@@ -68,22 +58,20 @@
   const slide1 = document.getElementById('slide1');
   const slide2 = document.getElementById('slide2');
 
-  let currentIndex = 0;
-  let currentSlide = slide1;
-  let nextSlide = slide2;
+  let slideIndex = 0;
+  let activeSlide = slide1;
+  let inactiveSlide = slide2;
 
-  // Ngarko foton e parë **menjëherë**
-  currentSlide.style.backgroundImage = `url(${images[currentIndex]})`;
-  currentSlide.classList.add('show');
+  activeSlide.style.backgroundImage = `url(${images[slideIndex]})`;
+  activeSlide.classList.add('active');
 
-  // Nisi slideshow pas 5 sekondave
-  function changeSlide() {
-    currentIndex = (currentIndex + 1) % images.length;
-    nextSlide.style.backgroundImage = `url(${images[currentIndex]})`;
-    nextSlide.classList.add('show');
-    currentSlide.classList.remove('show');
-    [currentSlide, nextSlide] = [nextSlide, currentSlide];
-  }
+  setInterval(() => {
+    slideIndex = (slideIndex + 1) % images.length;
+    inactiveSlide.style.backgroundImage = `url(${images[slideIndex]})`;
 
-  setInterval(changeSlide, 5000); // çdo 5 sekonda
+    inactiveSlide.classList.add('active');
+    activeSlide.classList.remove('active');
+
+    [activeSlide, inactiveSlide] = [inactiveSlide, activeSlide];
+  }, 5000);
 </script>
