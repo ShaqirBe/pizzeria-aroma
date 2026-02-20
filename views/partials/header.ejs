@@ -1,3 +1,4 @@
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 <header class="site-header">
   <div class="site-header-inner">
     <a href="/" class="brand" aria-label="Zur Startseite">
@@ -6,9 +7,9 @@
     </a>
 
     <nav class="site-nav" aria-label="Hauptnavigation">
-      <a class="<%= currentPath === '/' ? 'active' : '' %>" href="/">Startseite</a>
-      <a class="<%= currentPath === '/menu' ? 'active' : '' %>" href="/menu">Speisekarte</a>
-      <a class="<%= currentPath === '/kontakt' ? 'active' : '' %>" href="/kontakt">Kontakt</a>
+      <a class="<%= currentPath === '/' ? 'active' : '' %>" href="/" <%= currentPath === '/' ? 'aria-current="page"' : '' %>>Startseite</a>
+      <a class="<%= currentPath === '/menu' ? 'active' : '' %>" href="/menu" <%= currentPath === '/menu' ? 'aria-current="page"' : '' %>>Speisekarte</a>
+      <a class="<%= currentPath === '/kontakt' ? 'active' : '' %>" href="/kontakt" <%= currentPath === '/kontakt' ? 'aria-current="page"' : '' %>>Kontakt</a>
     </nav>
   </div>
 </header>

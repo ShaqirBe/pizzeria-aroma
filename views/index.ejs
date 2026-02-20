@@ -1,7 +1,7 @@
 <%- include('partials/head') %>
 <%- include('partials/header') %>
 
-<main class="home-main">
+<main id="main-content" class="home-main" tabindex="-1">
 <section class="hero">
 
   <!-- Background slideshow -->
@@ -55,6 +55,7 @@
 
 <script>
   const images = <%- imagesJSON %>;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const slide1 = document.getElementById('slide1');
   const slide2 = document.getElementById('slide2');
@@ -63,16 +64,20 @@
   let activeSlide = slide1;
   let inactiveSlide = slide2;
 
-  activeSlide.style.backgroundImage = `url(${images[slideIndex]})`;
-  activeSlide.classList.add('active');
+  if (images.length > 0) {
+    activeSlide.style.backgroundImage = `url(${images[slideIndex]})`;
+    activeSlide.classList.add('active');
+  }
 
-  setInterval(() => {
-    slideIndex = (slideIndex + 1) % images.length;
-    inactiveSlide.style.backgroundImage = `url(${images[slideIndex]})`;
+  if (!prefersReducedMotion && images.length >= 2) {
+    setInterval(() => {
+      slideIndex = (slideIndex + 1) % images.length;
+      inactiveSlide.style.backgroundImage = `url(${images[slideIndex]})`;
 
-    inactiveSlide.classList.add('active');
-    activeSlide.classList.remove('active');
+      inactiveSlide.classList.add('active');
+      activeSlide.classList.remove('active');
 
-    [activeSlide, inactiveSlide] = [inactiveSlide, activeSlide];
-  }, 5000);
+      [activeSlide, inactiveSlide] = [inactiveSlide, activeSlide];
+    }, 5000);
+  }
 </script>

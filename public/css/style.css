@@ -33,6 +33,33 @@ a {
   color: inherit;
 }
 
+:focus-visible {
+  outline: 3px solid #1f7a4b;
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  background: #fff;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid #111;
+  padding: 0.5rem 0.75rem;
+}
+
+.skip-link:focus {
+  top: 0.85rem;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -123,6 +150,11 @@ p {
 
 .site-nav a:hover,
 .site-nav a.active {
+  color: var(--text);
+  background: var(--surface-soft);
+}
+
+.site-nav a[aria-current="page"] {
   color: var(--text);
   background: var(--surface-soft);
 }
@@ -306,6 +338,12 @@ p {
 }
 
 .tab-btn.active {
+  border-color: transparent;
+  background: var(--text);
+  color: #fff;
+}
+
+.tab-btn[aria-selected="true"] {
   border-color: transparent;
   background: var(--text);
   color: #fff;
@@ -623,5 +661,20 @@ p {
   .cookie-notice {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-bg .slide {
+    transform: none;
   }
 }

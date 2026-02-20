@@ -1,31 +1,31 @@
 <%- include('partials/head') %>
 <%- include('partials/header') %>
 
-<main class="page-shell menu-page">
+<main id="main-content" class="page-shell menu-page" tabindex="-1">
   <section class="menu-page-intro">
     <p class="eyebrow">Unsere Speisekarte</p>
     <h1>Speisekarte - Pizzeria Aroma Peckelsheim</h1>
   </section>
 
-  <div class="menu-tabs">
-    <button class="tab-btn active" data-target="pizza">Pizza</button>
-    <button class="tab-btn" data-target="pizzas">Pizza Spezial</button>
-    <button class="tab-btn" data-target="pizzaex">Pizza Extra</button>
-    <button class="tab-btn" data-target="calzone">Calzone</button>
-    <button class="tab-btn" data-target="salat">Salat</button>
-    <button class="tab-btn" data-target="schnitzel">Schnitzel</button>
-    <button class="tab-btn" data-target="beilagen">Beilagen</button>
-    <button class="tab-btn" data-target="burger">Burger</button>
-    <button class="tab-btn" data-target="kebab">Kebab</button>
-    <button class="tab-btn" data-target="nudel">Nudel</button>
-    <button class="tab-btn" data-target="drinks">Getränke</button>
-    <button class="tab-btn" data-target="bier">Bier</button>
-    <button class="tab-btn" data-target="likor">Likör</button>
-    <button class="tab-btn" data-target="weine">Weine</button>
-    <button class="tab-btn" data-target="warme">Warme Getränke</button>
+  <div class="menu-tabs" role="tablist" aria-label="Speisekategorien">
+    <button class="tab-btn active" id="tab-pizza" role="tab" aria-controls="pizza" aria-selected="true" tabindex="0" data-target="pizza">Pizza</button>
+    <button class="tab-btn" id="tab-pizzas" role="tab" aria-controls="pizzas" aria-selected="false" tabindex="-1" data-target="pizzas">Pizza Spezial</button>
+    <button class="tab-btn" id="tab-pizzaex" role="tab" aria-controls="pizzaex" aria-selected="false" tabindex="-1" data-target="pizzaex">Pizza Extra</button>
+    <button class="tab-btn" id="tab-calzone" role="tab" aria-controls="calzone" aria-selected="false" tabindex="-1" data-target="calzone">Calzone</button>
+    <button class="tab-btn" id="tab-salat" role="tab" aria-controls="salat" aria-selected="false" tabindex="-1" data-target="salat">Salat</button>
+    <button class="tab-btn" id="tab-schnitzel" role="tab" aria-controls="schnitzel" aria-selected="false" tabindex="-1" data-target="schnitzel">Schnitzel</button>
+    <button class="tab-btn" id="tab-beilagen" role="tab" aria-controls="beilagen" aria-selected="false" tabindex="-1" data-target="beilagen">Beilagen</button>
+    <button class="tab-btn" id="tab-burger" role="tab" aria-controls="burger" aria-selected="false" tabindex="-1" data-target="burger">Burger</button>
+    <button class="tab-btn" id="tab-kebab" role="tab" aria-controls="kebab" aria-selected="false" tabindex="-1" data-target="kebab">Kebab</button>
+    <button class="tab-btn" id="tab-nudel" role="tab" aria-controls="nudel" aria-selected="false" tabindex="-1" data-target="nudel">Nudel</button>
+    <button class="tab-btn" id="tab-drinks" role="tab" aria-controls="drinks" aria-selected="false" tabindex="-1" data-target="drinks">Getränke</button>
+    <button class="tab-btn" id="tab-bier" role="tab" aria-controls="bier" aria-selected="false" tabindex="-1" data-target="bier">Bier</button>
+    <button class="tab-btn" id="tab-likor" role="tab" aria-controls="likor" aria-selected="false" tabindex="-1" data-target="likor">Likör</button>
+    <button class="tab-btn" id="tab-weine" role="tab" aria-controls="weine" aria-selected="false" tabindex="-1" data-target="weine">Weine</button>
+    <button class="tab-btn" id="tab-warme" role="tab" aria-controls="warme" aria-selected="false" tabindex="-1" data-target="warme">Warme Getränke</button>
   </div>
 
-<section class="menu-section tab-content active" id="pizza">
+<section class="menu-section tab-content active" id="pizza" role="tabpanel" aria-labelledby="tab-pizza" tabindex="0">
   <h2>Pizza</h2>
 
   <% menu.pizza.forEach(item => { %>
@@ -63,7 +63,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section tab-content" id="pizzas">
+<section class="menu-section tab-content" id="pizzas" role="tabpanel" aria-labelledby="tab-pizzas" tabindex="0" hidden>
   <h2>Pizza Spezial</h2>
 
   <% menu.pizzas.forEach(item => { %>
@@ -104,7 +104,7 @@
 
 </section>
 
-<section class="menu-section tab-content" id="pizzaex">
+<section class="menu-section tab-content" id="pizzaex" role="tabpanel" aria-labelledby="tab-pizzaex" tabindex="0" hidden>
   <h2>Pizza Extra</h2>
 
   <% menu.pizzaex.forEach(item => { %>
@@ -143,7 +143,7 @@
 </section>
 
 
-<section class="menu-section tab-content" id="calzone">
+<section class="menu-section tab-content" id="calzone" role="tabpanel" aria-labelledby="tab-calzone" tabindex="0" hidden>
   <h2>Calzone</h2>
 
   <% menu.calzone.forEach(item => { %>
@@ -181,7 +181,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section tab-content" id="salat">
+<section class="menu-section tab-content" id="salat" role="tabpanel" aria-labelledby="tab-salat" tabindex="0" hidden>
   <h2>Salat</h2>
 
   <% menu.salat.forEach(item => { %>
@@ -222,7 +222,7 @@
 
 </section>
 
-<section class="menu-section tab-content" id="burger">
+<section class="menu-section tab-content" id="burger" role="tabpanel" aria-labelledby="tab-burger" tabindex="0" hidden>
   <h2>Burger</h2>
 
   <% menu.burger.forEach(item => { %>
@@ -263,7 +263,7 @@
 
 </section>
 
-<section class="menu-section tab-content" id="schnitzel">
+<section class="menu-section tab-content" id="schnitzel" role="tabpanel" aria-labelledby="tab-schnitzel" tabindex="0" hidden>
   <h2>Schnitzel (Putenfleisch)</h2>
 
   <% menu.schnitzel.forEach(item => { %>
@@ -303,7 +303,7 @@
 
 </section>
 
-<section class="menu-section tab-content" id="beilagen">
+<section class="menu-section tab-content" id="beilagen" role="tabpanel" aria-labelledby="tab-beilagen" tabindex="0" hidden>
   <h2>Beilagen</h2>
 
   <% menu.beilagen.forEach(item => { %>
@@ -343,7 +343,7 @@
 
 </section>
 
-<section class="menu-section tab-content" id="kebab">
+<section class="menu-section tab-content" id="kebab" role="tabpanel" aria-labelledby="tab-kebab" tabindex="0" hidden>
   <h2>Kebab überbacken</h2>
 
   <% menu.kebab.forEach(item => { %>
@@ -383,7 +383,7 @@
 
 </section>
 
-<section class="menu-section tab-content" id="nudel">
+<section class="menu-section tab-content" id="nudel" role="tabpanel" aria-labelledby="tab-nudel" tabindex="0" hidden>
   <h2>Nudelgerichte</h2>
   <p class="menu-subnote">Spaghetti, Makkaroni oder Tortellini nach Wahl.</p>
   <% menu.nudel.forEach(item => { %>
@@ -423,7 +423,7 @@
 
 </section>
 
-<section class="menu-section tab-content" id="drinks">
+<section class="menu-section tab-content" id="drinks" role="tabpanel" aria-labelledby="tab-drinks" tabindex="0" hidden>
   <h2>Alkoholfreie Getränke</h2>
 
   <% menu.drinks.forEach(item => { %>
@@ -461,7 +461,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section tab-content" id="bier">
+<section class="menu-section tab-content" id="bier" role="tabpanel" aria-labelledby="tab-bier" tabindex="0" hidden>
   <h2>Bier</h2>
 
   <% menu.bier.forEach(item => { %>
@@ -499,7 +499,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section tab-content" id="likor">
+<section class="menu-section tab-content" id="likor" role="tabpanel" aria-labelledby="tab-likor" tabindex="0" hidden>
   <h2>Liköre & Spirituosen</h2>
 
   <% menu.likor.forEach(item => { %>
@@ -537,7 +537,7 @@
   <% }) %>
 </section>
 
-<section class="menu-section tab-content" id="weine">
+<section class="menu-section tab-content" id="weine" role="tabpanel" aria-labelledby="tab-weine" tabindex="0" hidden>
   <h2>Offene Weine</h2>
 
   <% menu.weine.forEach(item => { %>
@@ -576,7 +576,7 @@
 </section>
 
 
-<section class="menu-section tab-content" id="warme">
+<section class="menu-section tab-content" id="warme" role="tabpanel" aria-labelledby="tab-warme" tabindex="0" hidden>
   <h2>Warme Getränke</h2>
 
   <% menu.warme.forEach(item => { %>
@@ -643,14 +643,50 @@
 <script>
   const buttons = document.querySelectorAll(".tab-btn");
   const contents = document.querySelectorAll(".tab-content");
+  const tabCount = buttons.length;
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      contents.forEach(c => c.classList.remove("active"));
+  function activateTab(buttonToActivate, moveFocus = false) {
+    buttons.forEach((button) => {
+      const isActive = button === buttonToActivate;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-selected", isActive ? "true" : "false");
+      button.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
 
-      btn.classList.add("active");
-      document.getElementById(btn.dataset.target).classList.add("active");
+    contents.forEach((content) => {
+      const isActive = content.id === buttonToActivate.dataset.target;
+      content.classList.toggle("active", isActive);
+      content.hidden = !isActive;
+    });
+
+    if (moveFocus) {
+      buttonToActivate.focus();
+    }
+  }
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => activateTab(button));
+
+    button.addEventListener("keydown", (event) => {
+      let nextIndex = null;
+
+      if (event.key === "ArrowRight") {
+        nextIndex = (index + 1) % tabCount;
+      } else if (event.key === "ArrowLeft") {
+        nextIndex = (index - 1 + tabCount) % tabCount;
+      } else if (event.key === "Home") {
+        nextIndex = 0;
+      } else if (event.key === "End") {
+        nextIndex = tabCount - 1;
+      } else if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        activateTab(button);
+      }
+
+      if (nextIndex !== null) {
+        event.preventDefault();
+        activateTab(buttons[nextIndex], true);
+      }
     });
   });
 </script>
