@@ -2,31 +2,31 @@
 <%- include('partials/header') %>
 
 <main class="page-shell menu-page">
-<section class="menu-page-intro">
-  <p class="eyebrow">Unsere Speisekarte</p>
-  <h1>Speisekarte - Pizzeria Aroma Peckelsheim</h1>
-</section>
+  <section class="menu-page-intro">
+    <p class="eyebrow">Unsere Speisekarte</p>
+    <h1>Speisekarte - Pizzeria Aroma Peckelsheim</h1>
+  </section>
 
-<div class="menu-tabs">
-  <button class="tab-btn active" data-target="pizza">Pizza</button>
-  <button class="tab-btn" data-target="pizzas">Pizza Spezial</button>
-  <button class="tab-btn" data-target="pizzaex">Pizza Extra</button>
-  <button class="tab-btn" data-target="calzone">Calzone</button>
-  <button class="tab-btn" data-target="salat">Salat</button>
-  <button class="tab-btn" data-target="schnitzel">Schnitzel</button>
-  <button class="tab-btn" data-target="beilagen">Beilagen</button>
-  <button class="tab-btn" data-target="burger">Burger</button>
-  <button class="tab-btn" data-target="kebab">Kebab</button>
-  <button class="tab-btn" data-target="nudel">Nudel</button>
-  <button class="tab-btn" data-target="drinks">Getränke</button>
-  <button class="tab-btn" data-target="bier">Bier</button>
-  <button class="tab-btn" data-target="likor">Likör</button>
-  <button class="tab-btn" data-target="weine">Weine</button>
-  <button class="tab-btn" data-target="warme">Warme Getränke</button>
-</div>
+  <div class="menu-tabs">
+    <button class="tab-btn active" data-target="pizza">Pizza</button>
+    <button class="tab-btn" data-target="pizzas">Pizza Spezial</button>
+    <button class="tab-btn" data-target="pizzaex">Pizza Extra</button>
+    <button class="tab-btn" data-target="calzone">Calzone</button>
+    <button class="tab-btn" data-target="salat">Salat</button>
+    <button class="tab-btn" data-target="schnitzel">Schnitzel</button>
+    <button class="tab-btn" data-target="beilagen">Beilagen</button>
+    <button class="tab-btn" data-target="burger">Burger</button>
+    <button class="tab-btn" data-target="kebab">Kebab</button>
+    <button class="tab-btn" data-target="nudel">Nudel</button>
+    <button class="tab-btn" data-target="drinks">Getränke</button>
+    <button class="tab-btn" data-target="bier">Bier</button>
+    <button class="tab-btn" data-target="likor">Likör</button>
+    <button class="tab-btn" data-target="weine">Weine</button>
+    <button class="tab-btn" data-target="warme">Warme Getränke</button>
+  </div>
 
 <section class="menu-section tab-content active" id="pizza">
-  <h2>🍕 Pizza in Peckelsheim</h2>
+  <h2>Pizza</h2>
 
   <% menu.pizza.forEach(item => { %>
     <div class="menu-item">
@@ -64,7 +64,7 @@
 </section>
 
 <section class="menu-section tab-content" id="pizzas">
-  <h2>🍕 Pizza Spezial in Peckelsheim</h2>
+  <h2>Pizza Spezial</h2>
 
   <% menu.pizzas.forEach(item => { %>
     <div class="menu-item">
@@ -100,12 +100,12 @@
     </div>
   <% }) %>
 
-  <h2>Anschliessend mit Salat, Zwiebelen, Ei & Dressing belegt</h2>
+  <p class="menu-note">Anschließend mit Salat, Zwiebeln, Ei und Dressing belegt.</p>
 
 </section>
 
 <section class="menu-section tab-content" id="pizzaex">
-  <h2>🍕 Pizza EXTRA in Peckelsheim</h2>
+  <h2>Pizza Extra</h2>
 
   <% menu.pizzaex.forEach(item => { %>
     <div class="menu-item">
@@ -144,7 +144,7 @@
 
 
 <section class="menu-section tab-content" id="calzone">
-  <h2>Calzone in Peckelsheim</h2>
+  <h2>Calzone</h2>
 
   <% menu.calzone.forEach(item => { %>
     <div class="menu-item">
@@ -182,7 +182,7 @@
 </section>
 
 <section class="menu-section tab-content" id="salat">
-  <h2>Salat in Peckelsheim</h2>
+  <h2>Salat</h2>
 
   <% menu.salat.forEach(item => { %>
     <div class="menu-item">
@@ -217,13 +217,13 @@
 
     </div>
   <% }) %>
-  <h2>Alle Salate inklusive 3 Pizzabrötchen</h2>
+  <p class="menu-note">Alle Salate inklusive 3 Pizzabrötchen.</p>
 
 
 </section>
 
 <section class="menu-section tab-content" id="burger">
-  <h2>AROMA GOES AMERIKA</h2>
+  <h2>Burger</h2>
 
   <% menu.burger.forEach(item => { %>
     <div class="menu-item">
@@ -259,12 +259,12 @@
     </div>
   <% }) %>
 
-  <h2>Alle Burger mit Pommes Frietes als Beilage </h2>
+  <p class="menu-note">Alle Burger werden mit Pommes frites serviert.</p>
 
 </section>
 
 <section class="menu-section tab-content" id="schnitzel">
-  <h2>SCHNITZEL (Putenfleisch)</h2>
+  <h2>Schnitzel (Putenfleisch)</h2>
 
   <% menu.schnitzel.forEach(item => { %>
     <div class="menu-item">
@@ -304,7 +304,7 @@
 </section>
 
 <section class="menu-section tab-content" id="beilagen">
-  <h2>BEILAGEN</h2>
+  <h2>Beilagen</h2>
 
   <% menu.beilagen.forEach(item => { %>
     <div class="menu-item">
@@ -344,7 +344,7 @@
 </section>
 
 <section class="menu-section tab-content" id="kebab">
-  <h2>KEBAB ÜBERBACKEN</h2>
+  <h2>Kebab überbacken</h2>
 
   <% menu.kebab.forEach(item => { %>
     <div class="menu-item">
@@ -384,8 +384,8 @@
 </section>
 
 <section class="menu-section tab-content" id="nudel">
-  <h2>NUDELGERICHTE</h2>
-<h3> Spaghetii, Macceroni, Tortellini nach Wahl!</h3>
+  <h2>Nudelgerichte</h2>
+  <p class="menu-subnote">Spaghetti, Makkaroni oder Tortellini nach Wahl.</p>
   <% menu.nudel.forEach(item => { %>
     <div class="menu-item">
 
@@ -419,12 +419,12 @@
 
     </div>
   <% }) %>
-<h2>Alle Nudelrichte auf Wunsch überbacken + 2,00 Euro </h2>
+  <p class="menu-note">Alle Nudelgerichte auf Wunsch überbacken (+2,00 EUR).</p>
 
 </section>
 
 <section class="menu-section tab-content" id="drinks">
-  <h2>ALKOHOLFREIE GETRÄNKE</h2>
+  <h2>Alkoholfreie Getränke</h2>
 
   <% menu.drinks.forEach(item => { %>
     <div class="menu-item">
@@ -462,7 +462,7 @@
 </section>
 
 <section class="menu-section tab-content" id="bier">
-  <h2>BIER</h2>
+  <h2>Bier</h2>
 
   <% menu.bier.forEach(item => { %>
     <div class="menu-item">
@@ -500,7 +500,7 @@
 </section>
 
 <section class="menu-section tab-content" id="likor">
-  <h2>LIKÖRE & SPIRITUOSEN</h2>
+  <h2>Liköre & Spirituosen</h2>
 
   <% menu.likor.forEach(item => { %>
     <div class="menu-item">
@@ -538,7 +538,7 @@
 </section>
 
 <section class="menu-section tab-content" id="weine">
-  <h2>OFFENE WEINE</h2>
+  <h2>Offene Weine</h2>
 
   <% menu.weine.forEach(item => { %>
     <div class="menu-item">
@@ -577,7 +577,7 @@
 
 
 <section class="menu-section tab-content" id="warme">
-  <h2>WARME GETRÄNKE</h2>
+  <h2>Warme Getränke</h2>
 
   <% menu.warme.forEach(item => { %>
     <div class="menu-item">
