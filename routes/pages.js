@@ -1,0 +1,95 @@
+const express = require("express");
+const router = express.Router();
+const path = require("path");
+const fs = require("fs");
+const { isOpenNow, getNextOpening } = require("../utils/isOpenNow");
+const openingHours = require("../config/openingHours");
+
+// IMPORT I SAKTË
+const menuData = require("../data/menu.json");
+const allergensData = require("../data/allergens.json");
+const SITE_URL = "https://www.pizzeria-aroma-peckelsheim.de";
+const WEEK_DAYS = [
+  { key: 1, label: "Montag" },
+  { key: 2, label: "Dienstag" },
+  { key: 3, label: "Mittwoch" },
+  { key: 4, label: "Donnerstag" },
+  { key: 5, label: "Freitag" },
+  { key: 6, label: "Samstag" },
+  { key: 0, label: "Sonntag" }
+];
+
+router.use((req, res, next) => {
+  res.locals.currentPath = req.path;
+  res.locals.pageTitle = "Pizzeria Aroma Peckelsheim - Pizza, Pasta & Salat";
+  res.locals.pageDescription =
+    "Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb.";
+  res.locals.canonicalUrl = `${SITE_URL}${req.path}`;
+  res.locals.pageImage = `${SITE_URL}/images2/fasade.jpeg`;
+  res.locals.heroPreloadImage = null;
+  next();
+});
+
+
+router.get("/", (req, res) => {
+  // Lexo fotot e slider-it nga /public/images
+  const imagesDir = path.join(__dirname, "../public/images");
+  const preferredHeroImages = ["slider1.jpg", "slider2.jpg", "slide3.jpg", "bg1.jpg"];
+  const imageFiles = preferredHeroImages
+    .filter((file) => fs.existsSync(path.join(imagesDir, file)))
+    .map((file) => `/images/${file}`);
+
+  // Llogarit statusin hapur/mbyllur
+  const open = isOpenNow();
+  const nextOpening = open ? null : getNextOpening();
+  const hoursCards = WEEK_DAYS.map((day) => {
+    const ranges = openingHours.hours[day.key] || [];
+    return {
+      day: day.label,
+      isClosed: ranges.length === 0,
+      times: ranges.map(([start, end]) => `${start} - ${end}`)
+    };
+  });
+
+  // Render index.ejs me të gjitha të dhënat
+  res.render("index", {
+    imagesJSON: JSON.stringify(imageFiles),
+    isOpen: open,
+    nextOpening,
+    pageTitle: "Pizzeria Aroma Peckelsheim - Pizza, Pasta & Salat",
+    pageDescription:
+      "Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb.",
+    heroPreloadImage: imageFiles[0] || null,
+    hoursCards
+  });
+});
+
+
+router.get("/menu", (req, res) => {
+  res.render("menu", {
+    menu: menuData,
+    allergens: allergensData,
+    pageTitle: "Speisekarte | Pizzeria Aroma Peckelsheim",
+    pageDescription:
+      "Unsere aktuelle Speisekarte mit Pizza, Pasta, Salat, Burgern und Getränken in Peckelsheim."
+  });
+});
+
+
+
+router.get("/kontakt", (req, res) => {
+  res.render("kontakt", {
+    pageTitle: "Kontakt | Pizzeria Aroma Peckelsheim",
+    pageDescription:
+      "Kontakt zur Pizzeria Aroma in Peckelsheim: Adresse, Telefon und E-Mail auf einen Blick."
+  });
+});
+
+router.get("/impressum", (req, res) => {
+  res.render("impressum", {
+    pageTitle: "Impressum | Pizzeria Aroma Peckelsheim",
+    pageDescription: "Impressum und rechtliche Angaben der Pizzeria Aroma Peckelsheim."
+  });
+});
+
+module.exports = router;

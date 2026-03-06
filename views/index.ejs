@@ -1,0 +1,105 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main id="main-content" class="home-main" tabindex="-1">
+<section class="hero">
+
+  <!-- Background slideshow -->
+  <div class="hero-bg">
+    <div class="slide active" id="slide1" style="<%= heroPreloadImage ? `background-image:url('${heroPreloadImage}')` : '' %>"></div>
+    <div class="slide" id="slide2"></div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Status badge (sekondar, jo fokus) -->
+  <div class="open-badge <%= isOpen ? 'open' : 'closed' %>">
+    <% if (isOpen) { %>
+      Jetzt geöffnet
+    <% } else { %>
+      Geschlossen
+      <% if (nextOpening) { %>
+        <small>
+          <%= nextOpening.dayOffset === 0
+            ? 'Öffnet um ' + nextOpening.time
+            : 'Öffnet morgen um ' + nextOpening.time %>
+        </small>
+      <% } %>
+    <% } %>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <p class="eyebrow">Peckelsheim</p>
+    <h1>Pizzeria Aroma</h1>
+    <p>Pizza, Pasta & Salat – Familienbetrieb</p>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="tel:+4956443059965">Jetzt anrufen</a>
+      <a
+        class="btn secondary"
+        href="https://maps.google.com?q=Lützer+Straße+14a+34439+Peckelsheim"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Route anzeigen
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<section class="page-shell opening-hours" aria-labelledby="opening-hours-title">
+  <div class="opening-hours-head">
+    <p class="eyebrow">Öffnungszeiten</p>
+    <h2 id="opening-hours-title">Unsere Zeiten auf einen Blick</h2>
+  </div>
+
+  <div class="hours-grid">
+    <% hoursCards.forEach((entry) => { %>
+      <article class="day-card <%= entry.isClosed ? 'closed' : '' %>">
+        <h3><%= entry.day %></h3>
+        <% if (entry.isClosed) { %>
+          <p>Ruhetag</p>
+        <% } else { %>
+          <% entry.times.forEach((slot) => { %>
+            <p><%= slot %></p>
+          <% }) %>
+        <% } %>
+      </article>
+    <% }) %>
+  </div>
+</section>
+</main>
+
+<%- include('partials/footer') %>
+
+<script>
+  const images = <%- imagesJSON %>;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const slide1 = document.getElementById('slide1');
+  const slide2 = document.getElementById('slide2');
+
+  let slideIndex = 0;
+  let activeSlide = slide1;
+  let inactiveSlide = slide2;
+
+  if (images.length > 0 && !activeSlide.style.backgroundImage) {
+    activeSlide.style.backgroundImage = `url(${images[slideIndex]})`;
+    activeSlide.classList.add('active');
+  }
+
+  if (!prefersReducedMotion && images.length >= 2) {
+    setInterval(() => {
+      slideIndex = (slideIndex + 1) % images.length;
+      inactiveSlide.style.backgroundImage = `url(${images[slideIndex]})`;
+
+      inactiveSlide.classList.add('active');
+      activeSlide.classList.remove('active');
+
+      [activeSlide, inactiveSlide] = [inactiveSlide, activeSlide];
+    }, 5000);
+  }
+</script>
