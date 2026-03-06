@@ -1,8 +1,6 @@
 {
     "pizza": [
-<<<<<<< HEAD
       
-=======
 
         {  
             "number": "01",  
@@ -12,7 +10,6 @@
             "ingredients": "Tomatensoße & Käse",  
             "allergens": "3,Aa,1"  
           },  
->>>>>>> 47ce9e136096570aee66fb6401b571dd66fdee11
          {  
             "number": "02",  
             "name": "Pizza Salami",  
