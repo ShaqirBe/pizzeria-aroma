@@ -1,6 +1,18 @@
 {
     "pizza": [
+<<<<<<< HEAD
       
+=======
+
+        {  
+            "number": "01",  
+            "name": "Pizza Margherita",  
+            "klein_price": "4,50€",  
+            "gross_price": "8,00€",  
+            "ingredients": "Tomatensoße & Käse",  
+            "allergens": "3,Aa,1"  
+          },  
+>>>>>>> 47ce9e136096570aee66fb6401b571dd66fdee11
          {  
             "number": "02",  
             "name": "Pizza Salami",  
