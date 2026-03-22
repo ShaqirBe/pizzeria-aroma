@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require("path");
 const fs = require("fs");
 const { isOpenNow, getNextOpening } = require("../utils/isOpenNow");
+const { getHolidayNotice } = require("../utils/holidayNotice");
 const openingHours = require("../config/openingHours");
 
 // IMPORT I SAKTË
@@ -40,8 +41,14 @@ router.get("/", (req, res) => {
     .map((file) => `/images/${file}`);
 
   // Llogarit statusin hapur/mbyllur
-  const open = isOpenNow();
-  const nextOpening = open ? null : getNextOpening();
+  let open = isOpenNow();
+  let nextOpening = open ? null : getNextOpening();
+  const holidayNotice = getHolidayNotice();
+
+  if (holidayNotice && holidayNotice.isHolidayNow) {
+    open = false;
+    nextOpening = null;
+  }
   const hoursCards = WEEK_DAYS.map((day) => {
     const ranges = openingHours.hours[day.key] || [];
     return {
@@ -60,7 +67,8 @@ router.get("/", (req, res) => {
     pageDescription:
       "Pizzeria Aroma in Peckelsheim. Frische Pizza, Pasta und Salat. Jetzt anrufen oder Route anzeigen. Familienbetrieb.",
     heroPreloadImage: imageFiles[0] || null,
-    hoursCards
+    hoursCards,
+    holidayNotice
   });
 });
 

@@ -50,6 +50,30 @@
 
 </section>
 
+
+<% if (holidayNotice) { %>
+<section class="page-shell holiday-notice" aria-live="polite">
+  <div class="holiday-card">
+    <div class="holiday-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+        <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1.5A2.5 2.5 0 0 1 22 6.5v13A2.5 2.5 0 0 1 19.5 22h-15A2.5 2.5 0 0 1 2 19.5v-13A2.5 2.5 0 0 1 4.5 4H6V3a1 1 0 0 1 1-1Zm12.5 7h-15v10.5a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V9Zm-15-3a.5.5 0 0 0-.5.5V7h16v-.5a.5.5 0 0 0-.5-.5H18v1a1 1 0 1 1-2 0V6H8v1a1 1 0 1 1-2 0V6H4.5Z"/>
+        <path d="M7.5 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm4 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm4 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm-8 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm4 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
+      </svg>
+    </div>
+    <div class="holiday-content">
+      <p class="eyebrow">Hinweis</p>
+      <h2><%= holidayNotice.headline %></h2>
+      <p>
+        Liebe Gäste, wir machen zu <%= holidayNotice.label %> eine kurze Pause:
+        <%= holidayNotice.startLabel %> - <%= holidayNotice.endLabel %>.
+        In dieser Zeit bleibt das Lokal geschlossen. Ab dem <%= holidayNotice.reopenLabel %>
+        sind wir wieder für euch da.
+      </p>
+    </div>
+  </div>
+</section>
+<% } %>
+
 <section class="page-shell opening-hours" aria-labelledby="opening-hours-title">
   <div class="opening-hours-head">
     <p class="eyebrow">Öffnungszeiten</p>
